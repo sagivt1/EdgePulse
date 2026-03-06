@@ -12,8 +12,10 @@ class EdgePulseRecipe(ConanFile):
     generators = "CMakeDeps"
 
     def requirements(self):
-        # Dependencies like spdlog and sqlitecpp will be added here via self.requires()
-        pass
+        self.requires("spdlog/1.17.0")
+
+    def build_requirements(self):
+        self.test_requires("gtest/1.17.0")
 
     def layout(self):
         # Configures the build folder structure (e.g., /build/Release)
