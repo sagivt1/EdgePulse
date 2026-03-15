@@ -13,6 +13,7 @@ class EdgePulseRecipe(ConanFile):
 
     def requirements(self):
         self.requires("spdlog/1.17.0")
+        self.requires("sqlitecpp/3.3.1")
 
     def build_requirements(self):
         self.test_requires("gtest/1.17.0")

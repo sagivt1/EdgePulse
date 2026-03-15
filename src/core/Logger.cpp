@@ -7,6 +7,11 @@ namespace edge {
     std::shared_ptr<spdlog::logger> Logger::s_CoreLogger;
 
     void Logger::Init() {
+
+        if(spdlog::get("EDGE")) {
+            return;
+        }
+
         // Set the global formatting pattern for spdlog.
         // %^   : Start color range (log level color)
         // %Y-%m-%d %H:%M:%S.%e : Date and Time with milliseconds
